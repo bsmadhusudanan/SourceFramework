@@ -21,8 +21,18 @@ namespace Source
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/kendo/2014.3.1411/kendo.material.min.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/kendo").Include(
+                // "~/Scripts/kendo/kendo.timezones.min.js", // uncomment if using the Scheduler
+                    "~/Scripts/kendo/2014.3.1411/kendo.aspnetmvc.min.js",
+                    "~/Scripts/kendo/2014.3.1411/cultures/kendo.culture.en-GB.min.js"));
+
+            bundles.Add(new StyleBundle("~/Content/kendo/css").Include(
+            "~/Content/kendo/2014.3.1411/kendo.common-bootstrap.min.css",
+                //"~/Content/kendo/kendo.bootstrap.min.css",
+            "~/Content/kendo/2014.3.1411/kendo.blueopal.min.css"));
         }
     }
 }
