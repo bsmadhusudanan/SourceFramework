@@ -1,0 +1,98 @@
+﻿@model Source.Controllers.Product
+@{
+    ViewBag.Title = "Components";
+}
+<style>
+    .demo-section {
+        width: 250px;
+        margin: 35px auto 50px;
+        padding: 30px;
+    }
+    .demo-sectiongrid {
+        width: 500px;
+        margin: 35px auto 50px;
+        padding: 30px;
+    }
+</style>
+
+<div class="demo-section">
+    <h2>Input Time</h2>
+
+    @Html.Kendo().TextBoxFor(m=>m.ProductID)
+</div>
+
+<div class="demo-section">
+    <h2>Drop Down</h2>
+
+    @(Html.Kendo().DropDownList()
+          .Name("products")
+          .DataTextField("ProductName")
+          .DataValueField("ProductID")
+          .HtmlAttributes(new { style = "width:250px" })
+          .Filter("contains")
+          .DataSource(source =>
+          {
+              source.Read(read =>
+              {
+                  read.Action("GetData", "Home");
+              })
+              .ServerFiltering(true);
+          })
+    )
+</div>
+
+<div class="demo-section">
+    <h2>Date Time</h2>
+
+@Html.Kendo().DateTimePicker().Name("KendoDT").Value(DateTime.Now)
+</div>
+<div class="demo-section">
+    <div class="row">
+        <div class="col-md-2">
+            <h2>Multi Select</h2>
+            @(Html.Kendo().MultiSelect()
+          .Name("optional")
+          .AutoClose(false)
+          .Placeholder("Select attendees...")
+          .BindTo(new List<string>() {
+              "Steven White",
+              "Nancy King",
+              "Anne King",
+              "Nancy Davolio",
+              "Robert Davolio",
+              "Michael Leverling",
+              "Andrew Callahan",
+              "Michael Suyama",
+              "Anne King",
+              "Laura Peacock",
+              "Robert Fuller",
+              "Janet White",
+              "Nancy Leverling",
+              "Robert Buchanan",
+              "Andrew Fuller",
+              "Anne Davolio",
+              "Andrew Suyama",
+              "Nige Buchanan",
+              "Laura Fuller"
+          })
+            )
+        </div>
+    </div>
+</div>
+
+
+
+<div class="demo-sectiongrid">
+    @(Html.Kendo().Grid<Source.Controllers.Product>()
+        .Name("grid")
+        .Scrollable()
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .Read(read => read.Action("GetDatas", "Home"))
+        )
+    )
+</div>
+
+
+
+

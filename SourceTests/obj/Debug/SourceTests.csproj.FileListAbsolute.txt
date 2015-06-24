@@ -1,0 +1,5 @@
+D:\DesignIntegration\Source\SourceTests\bin\Debug\SourceTests.dll
+D:\DesignIntegration\Source\SourceTests\bin\Debug\SourceTests.pdb
+D:\DesignIntegration\Source\SourceTests\obj\Debug\SourceTests.csprojResolveAssemblyReference.cache
+D:\DesignIntegration\Source\SourceTests\obj\Debug\SourceTests.dll
+D:\DesignIntegration\Source\SourceTests\obj\Debug\SourceTests.pdb

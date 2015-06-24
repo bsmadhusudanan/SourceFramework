@@ -21,6 +21,18 @@ namespace Source.Controllers
 
             return View();
         }
+        public JsonResult GetData()
+        {
+            return Json(new List<Product> { new Product { ProductID = "1", ProductName = "Product1" }, new Product { ProductID = "2", ProductName = "Product2" }, new Product { ProductID = "3", ProductName = "Product3" }, new Product { ProductID = "4", ProductName = "Product4" } }, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult GetDatas()
+        {
+            return Json(new List<Product> { new Product { ProductID = "1", ProductName = "Product1" }, new Product { ProductID = "2", ProductName = "Product2" }, new Product { ProductID = "3", ProductName = "Product3" }, new Product { ProductID = "4", ProductName = "Product4" } }, JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult Components()
+        {
+            return View();
+        }
 
         public ActionResult Contact()
         {
@@ -28,5 +40,10 @@ namespace Source.Controllers
 
             return View();
         }
+    }
+    public class Product
+    {
+        public string ProductID { set; get; }
+        public string ProductName { set; get; }
     }
 }
