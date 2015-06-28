@@ -392,6 +392,7 @@
     <Content Include="Content\kendo\2014.3.1411\Uniform\sprite_2x.png" />
     <Content Include="Content\kendo\2014.3.1411\Uniform\sprite_kpi.png" />
     <Content Include="Content\kendo\2014.3.1411\Uniform\sprite_kpi_2x.png" />
+    <Content Include="Content\Styles.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
