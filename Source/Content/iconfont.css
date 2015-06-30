@@ -1,0 +1,64 @@
+
+@font-face {
+  font-family: 'MaterialIcons';
+  src: url('../fonts/MaterialIcons-Regular.eot');
+  src: url('../fonts/MaterialIcons-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/MaterialIcons-Regular.woff') format('woff'), url('../fonts/MaterialIcons-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'RobotoMedium';
+  src: url('../fonts/Roboto-Medium-webfont.eot');
+  src: url('../fonts/Roboto-Medium-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Roboto-Medium-webfont.woff') format('woff'), url('../fonts/Roboto-Medium-webfont.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'RobotoRegular';
+  src: url('../fonts/Roboto-Regular-webfont.eot');
+  src: url('../fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Roboto-Regular-webfont.woff') format('woff'), url('../fonts/Roboto-Regular-webfont.ttf') format('truetype');
+}
+
+
+.material-icons {
+    font-family: 'MaterialIcons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    /* Preferred icon size */
+    
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    /* Support for all WebKit browsers. */
+    
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    
+    font-feature-settings: 'liga';
+}
+
+
+
+.roboto-regular {
+    font-family: 'RobotoRegular';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+}
+
+
+.roboto-medium {
+    font-family: 'RobotoMedium';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+}
+

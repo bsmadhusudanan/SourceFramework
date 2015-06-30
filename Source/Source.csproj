@@ -119,8 +119,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\base.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\iconfont.css" />
     <Content Include="Content\kendo\2014.3.1411\Black\editor.png" />
     <Content Include="Content\kendo\2014.3.1411\Black\imagebrowser.png" />
     <Content Include="Content\kendo\2014.3.1411\Black\indeterminate.gif" />
@@ -392,14 +394,19 @@
     <Content Include="Content\kendo\2014.3.1411\Uniform\sprite_2x.png" />
     <Content Include="Content\kendo\2014.3.1411\Uniform\sprite_kpi.png" />
     <Content Include="Content\kendo\2014.3.1411\Uniform\sprite_kpi_2x.png" />
+    <Content Include="Content\snarl.min.css" />
     <Content Include="Content\Styles.css" />
+    <Content Include="Content\waves.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\Roboto-Medium-webfont.svg" />
+    <Content Include="fonts\Roboto-Regular-webfont.svg" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
     <Content Include="Images\heroAccent.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\base.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\kendo\2014.3.1411\fonts\DejaVu\DejaVuSans-Bold.ttf" />
@@ -417,6 +424,16 @@
     <Content Include="Content\kendo\2014.3.1411\fonts\DejaVu\LICENSE" />
     <Content Include="Content\kendo\2014.3.1411\images\kendoui.ttf" />
     <Content Include="Content\kendo\2014.3.1411\images\kendoui.woff" />
+    <Content Include="fonts\MaterialIcons-Regular.eot" />
+    <Content Include="fonts\MaterialIcons-Regular.ttf" />
+    <Content Include="fonts\MaterialIcons-Regular.woff" />
+    <Content Include="fonts\MaterialIcons-Regular.woff2" />
+    <Content Include="fonts\Roboto-Medium-webfont.eot" />
+    <Content Include="fonts\Roboto-Medium-webfont.ttf" />
+    <Content Include="fonts\Roboto-Medium-webfont.woff" />
+    <Content Include="fonts\Roboto-Regular-webfont.eot" />
+    <Content Include="fonts\Roboto-Regular-webfont.ttf" />
+    <Content Include="fonts\Roboto-Regular-webfont.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -571,6 +588,8 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\snarl.min.js" />
+    <Content Include="Scripts\waves.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
