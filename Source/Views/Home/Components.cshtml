@@ -82,6 +82,7 @@
     </section>
     <section>
         <div class="separator">
+            <h2>Grid</h2>
             @(Html.Kendo().Grid<Source.Controllers.Product>()
         .Name("grid")
         .Scrollable()
@@ -94,15 +95,17 @@
     </section>
     <section>
         <div class="separator">
+            <h2>Buttons & Notification</h2>
             @*ALERTS*@
             <div class="separator">
-                <button type="button" class="k-button k-primary" id="btnAlert1">Alert Sent Successfully - 1</button>
-                <button type="button" class="k-button" id="btnAlert2">Alert Sent Failed - 2</button>
-                <button type="button" class="k-button" id="btnAlert3">Alert Vessel Arrived - 3</button>
+                <button type="button" class="k-button k-primary" id="btnAlert1">Notification Sent Successfully</button>
+                <button type="button" class="k-button" id="btnAlert2">Notification Sent Failed</button>
+                <button type="button" class="k-button" id="btnAlert3">Notification Vessel Arrived</button>
             </div>
         </div>
     </section>
     <section>
+        <h2>Cards</h2>
         <div class="card">
             <div class="card-main">
                 <div class="cardtitle">
@@ -126,7 +129,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="card-inner">
+                <div class="card-inner col-md-12">
                     <div class="col-md-6">
                         <form class="form-horizontal">
                             <div class="form-group">
@@ -164,7 +167,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="card-action">
+                <div class="card-action col-md-12">
                     <ul>
                         <li class="card-icons">
                             <span>Call Request</span>
@@ -193,22 +196,23 @@
     </section>
 
     <section>
-        <div class="card">
-            @(Html.Kendo().Window().Name("kwindow").Title("Model Window").Content("Loading Content").Iframe(true).Draggable().Resizable().Width(600).Actions(action => action.Maximize().Minimize().Close()).Events(evt => evt.Close("onClose")).Visible(false).Modal(true).LoadContentFrom("Index", "Home"))
-            <div class="demo-sectiongrid">
-                <button type="button" class="k-button" id="btnWindow">Open Popup</button>
-            </div>
+        <h2>Pop Up</h2>
+        <div class="separator">
+            @(Html.Kendo().Window().Name("kwindow").Title("Pop Up Example").Content("Loading Content").Iframe(true).Draggable().Width(600).Height(300).Actions(action => action.Close()).Events(evt => evt.Close("onClose")).Visible(false).Modal(true).LoadContentFrom("Index", "Home"))
+            <button type="button" class="k-button" id="btnWindow">Open Popup</button>
         </div>
-
     </section>
 
     <div class="fbtn-container">
         <div id="menu1" class="fbtn-inner">
-            <a class="fbtn fbtn-red fbtn-lg" data-toggle="dropdown" aria-expanded="false"><span class="fbtn-text">Links</span><span class="fbtn-ori icon icon-open-in-new"></span><span class="fbtn-sub icon icon-close"></span></a>
+            <a class="fbtn fbtn-green fbtn-lg" data-toggle="dropdown" aria-expanded="false">
+                @*<span class="fbtn-text">Send</span>*@
+                <span class="fbtn-ori icon icon-open-in-new"><i class="material-icons">add</i></span>
+                <span class="fbtn-sub icon icon-close"><i class="material-icons">add</i></span>
+            </a>
             <div class="fbtn-dropdown">
-                <a class="fbtn" href="#" target="_blank"><span class="fbtn-text">Fork me on GitHub</span><span class="fa fa-github"></span></a>
-                <a class="fbtn" href="#" target="_blank"><span class="fbtn-text">Fork me on GitHub</span><span class="fa fa-github"></span></a>
-                <a class="fbtn fbtn-blue" href="https://twitter.com/daemonites" target="_blank"><span class="fbtn-text">Send</span><span class="fa fa-twitter"></span></a>
+                <a class="fbtn fbtn-red" href="#"><span class="fbtn-text">Cancel</span><i class="material-icons">clear</i></a>
+                <a class="fbtn fbtn-blue" href="#"><span class="fbtn-text">Send</span><i class="material-icons">send</i></a>
             </div>
         </div>
     </div>
@@ -217,7 +221,7 @@
         Waves.attach('#snarl-demo', ['waves-button', 'waves-float']);
 
         Snarl.setDefaultOptions({
-            timeout: 5000
+            timeout: 115000
         });
 
         $('#btnAlert1').click(function () {
@@ -243,6 +247,6 @@
     <script>
         $(document).ready(function () { $("#btnWindow").bind("click", function () { var window = $("#kwindow").data("kendoWindow"); window.center().open(); }) });
         function onClose(e) {
-            alert("Closing");
+            //alert("Closing");
         }
     </script>
