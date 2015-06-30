@@ -23,13 +23,17 @@ namespace Source
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/kendo/2014.3.1411/kendo.material.min.css",
+                      "~/Content/bootstrap-datetimepicker.min.css",
                       "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/kendo").Include(
                 "~/Scripts/kendo/2014.3.1411/kendo.all.min.js",
                 // "~/Scripts/kendo/kendo.timezones.min.js", // uncomment if using the Scheduler
                     "~/Scripts/kendo/2014.3.1411/kendo.aspnetmvc.min.js",
-                    "~/Scripts/kendo/2014.3.1411/cultures/kendo.culture.en-GB.min.js"));
+                    "~/Scripts/kendo/2014.3.1411/cultures/kendo.culture.en-GB.min.js",
+                   "~/Scripts/bootstrap-datetimepicker.min.js"
+                    ));
+
 
             bundles.Add(new StyleBundle("~/Content/kendo/2014.3.1411/css").Include(
             "~/Content/kendo/2014.3.1411/kendo.common-bootstrap.min.css",
