@@ -21,6 +21,42 @@
     width: 1054px;
     margin: 0 auto;
 }
+
+/*GRID NAVIGATION MENU*/
+#GridNavBtn .k-button {
+    text-transform: uppercase;
+    width: 100px;
+    margin-left: 5px;
+}
+
+#GridNavBtn .toggle-icon,
+#GridNavBtn .buttons-menu {
+    margin: 8px 0 0;
+    height: 41px;
+}
+
+#GridNavBtn .search-icon {
+    top: 10px;
+    right: 65px;
+    position: absolute;
+}
+
+#GridNavBtn ul.nav.nav-list.pull-right {
+    left: 17px;
+}
+
+#GridNavBtn .card a.dropdown-toggle i.material-icons {
+    color: #000;
+}
+
+#GridNavBtn ul > li > a.dropdown-toggle {
+    line-height: 10px;
+    font-size: 24px;
+    height: 49px;
+}
+
+
+
 /*CALENDAR DATE PICKER*/
 .form_datetime input.k-textbox {
     width: 100%;
@@ -68,11 +104,23 @@ section {
     font-weight: 300;
     font-size: 20px;
 }
+
+/*DROPDOWN 3 DOTS BUTTON*/
+#ThreeDotsMenu > li > a.dropdown-toggle {
+    padding: 0 15px;
+}
+
+#ThreeDotsMenu > li > a > span {
+    color: #fff;
+    vertical-align: middle;
+    font-size: 24px;
+}
 /*SAVE/CANCEL BUTTON*/
 #menu1 .fbtn-dropdown .fbtn i.material-icons {
     top: 2px;
     position: relative;
 }
+
 /*GRID CARDS*/
 /*.card {
     position: relative;
@@ -133,13 +181,13 @@ li.card-icons {
     font-size: 18px;
     background-color: #597389;
     color: #FFF;
-    line-height: 42px;
+    line-height: 50px;
     padding-left: 10px;
 }
 
 .nav {
     list-style: none;
-    margin: 0px 0;
+    margin: 0;
     padding: 0;
     position: relative;
 }
@@ -1874,7 +1922,8 @@ html .km-pane-wrapper .km-widget,
 
 .k-menu.k-header,
 .k-menu .k-item {
-    border-color: #e6e6e6;
+    /*border-color: #e6e6e6;*/
+    border: none;
 }
 
 .k-column-menu,
@@ -2664,7 +2713,7 @@ span.k-colorpicker {
     border-color: #ebebeb;
     -webkit-box-shadow: 0 2px 0 rgba(0, 0, 255, 0.3), 0 2px 0 rgba(0, 0, 255, 0.3);
     box-shadow: 0 2px 0 rgba(0, 0, 255, 0.3), 0 2px 0 rgba(0, 0, 255, 0.3);
-     /*-webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2), 0 2px 3px rgba(0, 0, 0, 0.05);
+    /*-webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2), 0 2px 3px rgba(0, 0, 0, 0.05);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2), 0 2px 3px rgba(0, 0, 0, 0.05);*/
 }
 

@@ -128,28 +128,28 @@
     </div>
     <section>
         <div class="separator">
-            <h2>Advanced Search Filter</h2>
-            <div class="buttons-wrapper">
+            <h2>Grid Navigation Menu</h2>
+            <div id="GridNavBtn">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
                             <div class="col-md-8">
                                 <div class="form-inline">
                                     <div class="buttons-menu">
-                                        <button id="btnCreate" type="button" class="k-button k-primary"></button>
+                                        <button id="btnCreate" type="button" class="k-button k-primary">Add</button>
                                         <button id="btnView" type="button" class="k-button">View</button>
                                         <button id="btnEdit" type="button" class="k-button">Edit</button>
                                         <button id="btnDelete" type="button" class="k-button">Delete</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <div class="label-toggle-switch make-switch pull-right toggle-icon">
-                                    <input type="checkbox" id="voyageview1" name="voyageview" checked>
+                                    <input type="checkbox" id="voyageview1" name="voyageview" data-handle-width="65" checked>
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <i id="showhidefilter" class="material-icons pull-left search-icon"></i>
+                                <i id="showhidefilter" class="material-icons pull-left search-icon">search</i>
                                 <ul class="nav nav-list pull-right">
                                     <li class="dropdown">
                                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -182,9 +182,22 @@
                 <div class="card-main">
                     <div class="cardtitle">
                         <span>A Reyemi Cargo Clearing &amp; Management Service</span>
-                        <span class="pull-right">
-                            @Html.Kendo().Menu().Name("dotsMenu").Items(items => { items.Add().Text("").Items(children => { children.Add().Text("Edit").Url("#"); children.Add().Text("Delete").Url("#"); }); })
-                        </span>
+                        <ul id="ThreeDotsMenu" class="nav nav-list pull-right">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="icon">more_vert</span></a>
+                                <ul class="dropdown-menu" style="max-width: 576px;">
+                                    <li>
+                                        <a href="javascript:void(0)"><span class="icon margin-right-half">loop</span>&nbsp;Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)"><span class="icon margin-right-half">replay</span>&nbsp;Consectetur Adipiscing</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)"><span class="icon margin-right-half">shuffle</span>&nbsp;Sed Ornare</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                     <div class="card-inner col-md-12">
                         <div class="col-md-6">
@@ -323,6 +336,18 @@
 <script src="@Url.Content("~/Scripts/bootstrap-datetimepicker.min.js")"></script>
 
 <script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+        //language: 'fr',
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+        showMeridian: 1
+    });
+</script>
+<script type="text/javascript">
     $("[name='voyageview']").bootstrapSwitch();
 
     // Toggle Button Starts
@@ -335,17 +360,5 @@
             $('#listview').hide();
 
         }
-    });
-
-
-    $('.form_datetime').datetimepicker({
-        //language: 'fr',
-        weekStart: 1,
-        todayBtn: 1,
-        autoclose: 1,
-        todayHighlight: 1,
-        startView: 2,
-        forceParse: 0,
-        showMeridian: 1
     });
 </script>
