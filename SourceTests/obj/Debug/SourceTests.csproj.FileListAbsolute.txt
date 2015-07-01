@@ -3,3 +3,14 @@ D:\DesignIntegration\Source\SourceTests\bin\Debug\SourceTests.pdb
 D:\DesignIntegration\Source\SourceTests\obj\Debug\SourceTests.csprojResolveAssemblyReference.cache
 D:\DesignIntegration\Source\SourceTests\obj\Debug\SourceTests.dll
 D:\DesignIntegration\Source\SourceTests\obj\Debug\SourceTests.pdb
+C:\wamp\www\SourceFramework\SourceTests\bin\Debug\SourceTests.dll
+C:\wamp\www\SourceFramework\SourceTests\bin\Debug\SourceTests.pdb
+C:\wamp\www\SourceFramework\SourceTests\obj\Debug\SourceTests.csprojResolveAssemblyReference.cache
+C:\wamp\www\SourceFramework\SourceTests\obj\Debug\SourceTests.dll
+C:\wamp\www\SourceFramework\SourceTests\obj\Debug\SourceTests.pdb
+C:\wamp\www\SourceFramework\SourceTests\bin\Debug\System.Web.Razor.dll
+C:\wamp\www\SourceFramework\SourceTests\bin\Debug\System.Web.WebPages.dll
+C:\wamp\www\SourceFramework\SourceTests\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\wamp\www\SourceFramework\SourceTests\bin\Debug\System.Web.Razor.xml
+C:\wamp\www\SourceFramework\SourceTests\bin\Debug\System.Web.WebPages.xml
+C:\wamp\www\SourceFramework\SourceTests\bin\Debug\System.Web.WebPages.Deployment.xml

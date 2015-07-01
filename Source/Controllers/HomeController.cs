@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Kendo.Mvc.Extensions;
+using Kendo.Mvc.UI;
 
 namespace Source.Controllers
 {
@@ -25,10 +27,12 @@ namespace Source.Controllers
         {
             return Json(new List<Product> { new Product { ProductID = "1", ProductName = "Product1" }, new Product { ProductID = "2", ProductName = "Product2" }, new Product { ProductID = "3", ProductName = "Product3" }, new Product { ProductID = "4", ProductName = "Product4" } }, JsonRequestBehavior.AllowGet);
         }
-        public JsonResult GetDatas()
+        public JsonResult GetDatas([DataSourceRequest] DataSourceRequest request)
         {
-            return Json(new List<Product> { new Product { ProductID = "1", ProductName = "Product1" }, new Product { ProductID = "2", ProductName = "Product2" }, new Product { ProductID = "3", ProductName = "Product3" }, new Product { ProductID = "4", ProductName = "Product4" } }, JsonRequestBehavior.AllowGet);
+            List<Product> items = new List<Product> { new Product { ProductID = "1", ProductName = "Product1" }, new Product { ProductID = "2", ProductName = "Product2" }, new Product { ProductID = "3", ProductName = "Product3" }, new Product { ProductID = "4", ProductName = "Product4" } };
+            return Json(items.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
+
         public ActionResult Components()
         {
             return View();

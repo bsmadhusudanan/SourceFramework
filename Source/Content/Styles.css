@@ -10,6 +10,17 @@
     -webkit-font-smoothing: subpixel-antialiased;
     line-height: 24px;
 }
+
+.no-border {
+    border-color: #fff;
+    border: none;
+    -webkit-box-shadow: none;
+}
+
+.container {
+    width: 1054px;
+    margin: 0 auto;
+}
 /*CALENDAR DATE PICKER*/
 .form_datetime input.k-textbox {
     width: 100%;
@@ -19,18 +30,6 @@
 .form_datetime .input-group-addon {
     border: none;
     background-color: transparent;
-}
-
-.no-border {
-    border-color: #fff;
-    border: none;
-    -webkit-box-shadow: none;
-}
-
-.container {
-    padding: 0 10%;
-    margin: 0 auto;
-    width: 1170px;
 }
 
 section {
@@ -75,8 +74,7 @@ section {
     position: relative;
 }
 /*GRID CARDS*/
-
-.card {
+/*.card {
     position: relative;
     display: inline-block;
     vertical-align: top;
@@ -86,7 +84,7 @@ section {
     -webkit-transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1);
     transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1);
     width: 100%;
-}
+}*/
 
 .cardcontentmargin {
     margin: 0 33px;
@@ -135,7 +133,7 @@ li.card-icons {
     font-size: 18px;
     background-color: #597389;
     color: #FFF;
-    line-height: 50px;
+    line-height: 42px;
     padding-left: 10px;
 }
 

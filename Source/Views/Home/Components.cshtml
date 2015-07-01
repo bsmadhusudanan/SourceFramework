@@ -77,23 +77,101 @@
         <div class="separator">
             <h2>Grid</h2>
             @(Html.Kendo().Grid<Source.Controllers.Product>()
-        .Name("grid")
-        .Scrollable()
-        .DataSource(dataSource => dataSource
-            .Ajax()
-            .Read(read => read.Action("GetDatas", "Home"))
-        )
+.Name("grid").Columns(columns => { columns.Bound(c => c.ProductID); columns.Bound(c => c.ProductName); })
+.Scrollable().AutoBind(true).Selectable()
+.DataSource(dataSource => dataSource
+.Ajax()
+.Read(read => read.Action("GetDatas", "Home"))
+)
             )
+
         </div>
     </section>
     <section>
         <div class="separator">
-            <h2>Buttons & Notification</h2>
-            @*ALERTS*@
-            <div class="separator">
-                <button type="button" class="k-button k-primary" id="btnAlert1">Notification Sent Successfully</button>
-                <button type="button" class="k-button" id="btnAlert2">Notification Sent Failed</button>
-                <button type="button" class="k-button" id="btnAlert3">Notification Vessel Arrived</button>
+            <h2>Notifications</h2>
+            <button type="button" class="k-button k-primary" id="btnAlert1">Notification Sent Successfully</button>
+            <button type="button" class="k-button" id="btnAlert2">Notification Sent Failed</button>
+            <button type="button" class="k-button" id="btnAlert3">Notification Vessel Arrived</button>
+        </div>
+    </section>
+    <div class="section">
+        <h3>Checkboxes and Radio buttons</h3>
+        <ul>
+            <li>
+                <input type="checkbox" id="checkbox" class="k-checkbox">
+                <label class="k-checkbox-label" for="checkbox">Checkbox</label>
+            </li>
+            <li>
+                <input type="checkbox" id="checked-checkbox" class="k-checkbox" checked="checked">
+                <label class="k-checkbox-label" for="checked-checkbox">Checked</label>
+            </li>
+            <li>
+                <input type="checkbox" id="disabled-checkbox" class="k-checkbox" disabled="">
+                <label class="k-checkbox-label" for="disabled-checkbox">Disabled</label>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <input type="radio" name="radio" id="radio" class="k-radio">
+                <label class="k-radio-label" for="radio">Checkbox</label>
+            </li>
+            <li>
+                <input type="radio" name="radio" id="checked-radio" class="k-radio" checked="checked">
+                <label class="k-radio-label" for="checked-radio">Checked</label>
+            </li>
+            <li>
+                <input type="radio" name="radio" id="disabled-radio" class="k-radio" disabled="">
+                <label class="k-radio-label" for="disabled-radio">Disabled</label>
+            </li>
+        </ul>
+    </div>
+    <section>
+        <div class="separator">
+            <h2>Advanced Search Filter</h2>
+            <div class="buttons-wrapper">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="col-md-8">
+                                <div class="form-inline">
+                                    <div class="buttons-menu">
+                                        <button id="btnCreate" type="button" class="k-button k-primary"></button>
+                                        <button id="btnView" type="button" class="k-button">View</button>
+                                        <button id="btnEdit" type="button" class="k-button">Edit</button>
+                                        <button id="btnDelete" type="button" class="k-button">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="label-toggle-switch make-switch pull-right toggle-icon">
+                                    <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-on bootstrap-switch-id-voyageview1 bootstrap-switch-animate" style="width: 122px;"><div class="bootstrap-switch-container" style="width: 180px; margin-left: 0px;"><span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 60px;">CARD</span><span class="bootstrap-switch-label" style="width: 60px;">&nbsp;</span><span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 60px;">LIST</span><input type="checkbox" id="voyageview1" name="voyageview" checked=""></div></div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <i id="showhidefilter" class="material-icons pull-left search-icon"></i>
+                                <ul class="nav nav-list pull-right">
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                            <i class="material-icons"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" style="max-width: 1111.5px;">
+                                            <li>
+                                                <a href="javascript:void(0)"><span class="margin-right-half">Prints</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)"><span class="margin-right-half">Ops Review</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)"><span class="margin-right-half">Fulls Ops Reviews</span></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
