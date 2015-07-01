@@ -128,8 +128,8 @@
     </div>
     <section>
         <div class="separator">
-            <h2>Advanced Search Filter</h2>
-            <div class="buttons-wrapper">
+            <h2>Grid Navigation Menu</h2>
+            <div id="GridNavBtn">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
@@ -145,11 +145,11 @@
                             </div>
                             <div class="col-md-2">
                                 <div class="label-toggle-switch make-switch pull-right toggle-icon">
-                                    <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-on bootstrap-switch-id-voyageview1 bootstrap-switch-animate" style="width: 122px;"><div class="bootstrap-switch-container" style="width: 180px; margin-left: 0px;"><span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 60px;">CARD</span><span class="bootstrap-switch-label" style="width: 60px;">&nbsp;</span><span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 60px;">LIST</span><input type="checkbox" id="voyageview1" name="voyageview" checked=""></div></div>
+                                    <input type="checkbox" id="voyageview1" name="voyageview" data-handle-width="65" checked>
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <i id="showhidefilter" class="material-icons pull-left search-icon"></i>
+                                <i id="showhidefilter" class="material-icons pull-left search-icon">search</i>
                                 <ul class="nav nav-list pull-right">
                                     <li class="dropdown">
                                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -345,5 +345,20 @@
         startView: 2,
         forceParse: 0,
         showMeridian: 1
+    });
+</script>
+<script type="text/javascript">
+    $("[name='voyageview']").bootstrapSwitch();
+
+    // Toggle Button Starts
+    $("input[name='voyageview']").on('switchChange.bootstrapSwitch', function (e, data) {
+        if (data == true) {
+            $('#cardview').hide();
+            $('#listview').show();
+        } else {
+            $('#cardview').show();
+            $('#listview').hide();
+
+        }
     });
 </script>
