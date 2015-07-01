@@ -136,7 +136,7 @@
                             <div class="col-md-8">
                                 <div class="form-inline">
                                     <div class="buttons-menu">
-                                        <button id="btnCreate" type="button" class="k-button k-primary"></button>
+                                        <button id="btnCreate" type="button" class="k-button k-primary">Add</button>
                                         <button id="btnView" type="button" class="k-button">View</button>
                                         <button id="btnEdit" type="button" class="k-button">Edit</button>
                                         <button id="btnDelete" type="button" class="k-button">Delete</button>
@@ -182,9 +182,22 @@
                 <div class="card-main">
                     <div class="cardtitle">
                         <span>A Reyemi Cargo Clearing &amp; Management Service</span>
-                        <span class="pull-right">
-                            @Html.Kendo().Menu().Name("dotsMenu").Items(items => { items.Add().Text("").Items(children => { children.Add().Text("Edit").Url("#"); children.Add().Text("Delete").Url("#"); }); })
-                        </span>
+                        <ul id="ThreeDotsMenu" class="nav nav-list pull-right">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="icon">more_vert</span></a>
+                                <ul class="dropdown-menu" style="max-width: 576px;">
+                                    <li>
+                                        <a href="javascript:void(0)"><span class="icon margin-right-half">loop</span>&nbsp;Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)"><span class="icon margin-right-half">replay</span>&nbsp;Consectetur Adipiscing</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)"><span class="icon margin-right-half">shuffle</span>&nbsp;Sed Ornare</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                     <div class="card-inner col-md-12">
                         <div class="col-md-6">
