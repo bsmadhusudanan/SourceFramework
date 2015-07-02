@@ -7,7 +7,7 @@
 <div class="container">
     <section>
         <div class="separator">
-            <h2>Typography</h2>
+            <h3>Typography</h3><br>
             <span class="roboto-regular">Roboto Regular Fonts</span><br />
             <span class="roboto-medium">Roboto Medium Fonts</span><br />
             <span>Non Roboto Fonts</span>
@@ -16,20 +16,20 @@
     </section>
     <section>
         <div class="separator">
-            <h2>Input Time</h2>
+            <h3>Inputs</h3><br>
 
-            @Html.Kendo().TextBoxFor(m => m.ProductID)
+            @Html.Kendo().TextBoxFor(m => m.ProductID).HtmlAttributes(new { style = "width:100%" })
         </div>
     </section>
     <section>
         <div class="separator">
-            <h2>Drop Down</h2>
+            <h3>Drop Down</h3><br>
 
             @(Html.Kendo().DropDownList()
           .Name("products")
           .DataTextField("ProductName")
           .DataValueField("ProductID")
-          .HtmlAttributes(new { style = "width:250px" })
+          .HtmlAttributes(new { style = "width:100%" })
           .Filter("contains")
           .DataSource(source =>
           {
@@ -44,7 +44,7 @@
     </section>
     <section>
         <div class="separator">
-            <h2>Multi Select</h2>
+            <h3>Multi Select</h3><br>
             @(Html.Kendo().MultiSelect()
           .Name("optional")
           .AutoClose(false)
@@ -75,60 +75,65 @@
     </section>
     <section>
         <div class="separator">
-            <h2>Grid</h2>
-            @(Html.Kendo().Grid<Source.Controllers.Product>()
+            <h3>Grid</h3><br>
+            <div class="card">
+                <div id="GridTable">
+                    @(Html.Kendo().Grid<Source.Controllers.Product>()
 .Name("grid").Columns(columns => { columns.Bound(c => c.ProductID); columns.Bound(c => c.ProductName); })
 .Scrollable().AutoBind(true).Selectable()
 .DataSource(dataSource => dataSource
 .Ajax()
 .Read(read => read.Action("GetDatas", "Home"))
 )
-            )
-
+                    )
+                </div>
+            </div>
         </div>
     </section>
     <section>
         <div class="separator">
-            <h2>Notifications</h2>
+            <h3>Notifications</h3><br>
             <button type="button" class="k-button k-primary" id="btnAlert1">Notification Sent Successfully</button>
             <button type="button" class="k-button" id="btnAlert2">Notification Sent Failed</button>
             <button type="button" class="k-button" id="btnAlert3">Notification Vessel Arrived</button>
         </div>
     </section>
-    <div class="section">
-        <h3>Checkboxes and Radio buttons</h3>
-        <ul>
-            <li>
-                <input type="checkbox" id="checkbox" class="k-checkbox">
-                <label class="k-checkbox-label" for="checkbox">Checkbox</label>
-            </li>
-            <li>
-                <input type="checkbox" id="checked-checkbox" class="k-checkbox" checked="checked">
-                <label class="k-checkbox-label" for="checked-checkbox">Checked</label>
-            </li>
-            <li>
-                <input type="checkbox" id="disabled-checkbox" class="k-checkbox" disabled="">
-                <label class="k-checkbox-label" for="disabled-checkbox">Disabled</label>
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <input type="radio" name="radio" id="radio" class="k-radio">
-                <label class="k-radio-label" for="radio">Checkbox</label>
-            </li>
-            <li>
-                <input type="radio" name="radio" id="checked-radio" class="k-radio" checked="checked">
-                <label class="k-radio-label" for="checked-radio">Checked</label>
-            </li>
-            <li>
-                <input type="radio" name="radio" id="disabled-radio" class="k-radio" disabled="">
-                <label class="k-radio-label" for="disabled-radio">Disabled</label>
-            </li>
-        </ul>
-    </div>
     <section>
         <div class="separator">
-            <h2>Grid Navigation Menu</h2>
+            <h3>Checkboxes and Radio buttons</h3><br>
+            <ul>
+                <li>
+                    <input type="checkbox" id="checkbox" class="k-checkbox">
+                    <label class="k-checkbox-label" for="checkbox">Checkbox</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="checked-checkbox" class="k-checkbox" checked="checked">
+                    <label class="k-checkbox-label" for="checked-checkbox">Checked</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="disabled-checkbox" class="k-checkbox" disabled="">
+                    <label class="k-checkbox-label" for="disabled-checkbox">Disabled</label>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <input type="radio" name="radio" id="radio" class="k-radio">
+                    <label class="k-radio-label" for="radio">Checkbox</label>
+                </li>
+                <li>
+                    <input type="radio" name="radio" id="checked-radio" class="k-radio" checked="checked">
+                    <label class="k-radio-label" for="checked-radio">Checked</label>
+                </li>
+                <li>
+                    <input type="radio" name="radio" id="disabled-radio" class="k-radio" disabled="">
+                    <label class="k-radio-label" for="disabled-radio">Disabled</label>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <div class="separator">
+            <h3>Grid Navigation Menu</h3><br>
             <div id="GridNavBtn">
                 <div class="row">
                     <div class="col-md-12">
@@ -177,89 +182,362 @@
     </section>
     <section>
         <div class="separator">
-            <h2>Cards</h2>
-            <div class="card">
-                <div class="card-main">
-                    <div class="cardtitle">
-                        <span>A Reyemi Cargo Clearing &amp; Management Service</span>
-                        <ul id="ThreeDotsMenu" class="nav nav-list pull-right">
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="icon">more_vert</span></a>
-                                <ul class="dropdown-menu" style="max-width: 576px;">
-                                    <li>
-                                        <a href="javascript:void(0)"><span class="icon margin-right-half">loop</span>&nbsp;Lorem Ipsum</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"><span class="icon margin-right-half">replay</span>&nbsp;Consectetur Adipiscing</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"><span class="icon margin-right-half">shuffle</span>&nbsp;Sed Ornare</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-inner col-md-12">
-                        <div class="col-md-6">
-                            <form class="form-horizontal">
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">Voyage</label>
-                                    <div class="col-md-8">
-                                        <span class="form-control no-border">3AS</span>
+            <h3>Cards</h3><br>
+            <div id="cardview">
+                <div class="row">
+                    <div class="col-md-12 col-lg-6">
+                        <div class="card">
+                            <div class="card-main">
+                                <div class="cardtitle">
+                                    <span>A Reyemi Cargo Clearing &amp; Management Service</span>
+                                    @*DROPDOWN DOTS BUTTON*@
+                                    <ul id="ThreeDotsMenu" class="nav nav-list pull-right">
+                                        <li class="dropdown">
+                                            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="icon">more_vert</span></a>
+                                            <ul class="dropdown-menu" style="max-width: 576px;">
+                                                <li>
+                                                    <a href="javascript:void(0)"><span class="icon margin-right-half">loop</span>&nbsp;Lorem Ipsum</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)"><span class="icon margin-right-half">replay</span>&nbsp;Consectetur Adipiscing</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)"><span class="icon margin-right-half">shuffle</span>&nbsp;Sed Ornare</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-inner col-md-12">
+                                    <div class="col-md-6">
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">Voyage</label>
+                                                <div class="col-md-8">
+                                                    <span class="form-control no-border">3AS</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">Voyage</label>
+                                                <div class="col-md-8">
+                                                    <span class="form-control no-border">3AS</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">ETA/ATA</label>
+                                                <div class="col-md-8">
+                                                    <span class="form-control no-border">23/05/2015 00:00</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">ETD/ATD</label>
+                                                <div class="col-md-8">
+                                                    <span class="form-control no-border">23/05/2015 00:00</span>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
-                            </form>
-                            <form class="form-horizontal">
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">Voyage</label>
-                                    <div class="col-md-8">
-                                        <span class="form-control no-border">3AS</span>
-                                    </div>
+                                <div class="card-action col-md-12">
+                                    <ul>
+                                        <li class="card-icons">
+                                            <span>Call Request</span>
+                                            <i class="material-icons">archive</i>
+                                        </li>
+                                        <li class="card-icons">
+                                            <span>Loading List</span>
+                                            <i class="material-icons">border_color</i>
+                                        </li>
+                                        <li class="card-icons">
+                                            <span>Manifest</span>
+                                            <a id="addManifest" data-toggle="modal" onclick="openPopup()" href="#"><i class="material-icons blue">add_circle</i></a>
+                                        </li>
+                                        <li class="card-icons">
+                                            <span>Discharge List</span>
+                                            <i class="material-icons red">report_problem</i>
+                                        </li>
+                                        <li class="card-icons">
+                                            <span>Alerts</span>
+                                            <i class="material-icons yellow">report_problem</i>
+                                        </li>
+                                    </ul>
                                 </div>
-                            </form>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <form class="form-horizontal">
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">ETA/ATA</label>
-                                    <div class="col-md-8">
-                                        <span class="form-control no-border">23/05/2015 00:00</span>
+                    </div>
+                    <div class="col-md-12 col-lg-6">
+                        <div class="card">
+                            <div class="card-main">
+                                <div class="cardtitle">
+                                    <span>A Reyemi Cargo Clearing &amp; Management Service</span>
+                                    @*DROPDOWN DOTS BUTTON*@
+                                    <ul id="ThreeDotsMenu" class="nav nav-list pull-right">
+                                        <li class="dropdown">
+                                            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="icon">more_vert</span></a>
+                                            <ul class="dropdown-menu" style="max-width: 576px;">
+                                                <li>
+                                                    <a href="javascript:void(0)"><span class="icon margin-right-half">loop</span>&nbsp;Lorem Ipsum</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)"><span class="icon margin-right-half">replay</span>&nbsp;Consectetur Adipiscing</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)"><span class="icon margin-right-half">shuffle</span>&nbsp;Sed Ornare</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-inner col-md-12">
+                                    <div class="col-md-6">
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">Voyage</label>
+                                                <div class="col-md-8">
+                                                    <span class="form-control no-border">3AS</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">Voyage</label>
+                                                <div class="col-md-8">
+                                                    <span class="form-control no-border">3AS</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">ETA/ATA</label>
+                                                <div class="col-md-8">
+                                                    <span class="form-control no-border">23/05/2015 00:00</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">ETD/ATD</label>
+                                                <div class="col-md-8">
+                                                    <span class="form-control no-border">23/05/2015 00:00</span>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
-                            </form>
-                            <form class="form-horizontal">
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">ETD/ATD</label>
-                                    <div class="col-md-8">
-                                        <span class="form-control no-border">23/05/2015 00:00</span>
-                                    </div>
+                                <div class="card-action col-md-12">
+                                    <ul>
+                                        <li class="card-icons">
+                                            <span>Call Request</span>
+                                            <i class="material-icons">archive</i>
+                                        </li>
+                                        <li class="card-icons">
+                                            <span>Loading List</span>
+                                            <i class="material-icons">border_color</i>
+                                        </li>
+                                        <li class="card-icons">
+                                            <span>Manifest</span>
+                                            <a id="addManifest" data-toggle="modal" onclick="openPopup()" href="#"><i class="material-icons blue">add_circle</i></a>
+                                        </li>
+                                        <li class="card-icons">
+                                            <span>Discharge List</span>
+                                            <i class="material-icons red">report_problem</i>
+                                        </li>
+                                        <li class="card-icons">
+                                            <span>Alerts</span>
+                                            <i class="material-icons yellow">report_problem</i>
+                                        </li>
+                                    </ul>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-action col-md-12">
-                        <ul>
-                            <li class="card-icons">
-                                <span>Call Request</span>
-                                <i class="material-icons">archive</i>
-                            </li>
-                            <li class="card-icons">
-                                <span>Loading List</span>
-                                <i class="material-icons">border_color</i>
-                            </li>
-                            <li class="card-icons">
-                                <span>Manifest</span>
-                                <a data-toggle="modal" href="#modal-big"><i class="material-icons blue">add_circle</i></a>
-                            </li>
-                            <li class="card-icons">
-                                <span>Discharge List</span>
-                                <i class="material-icons red">report_problem</i>
-                            </li>
-                            <li class="card-icons">
-                                <span>Alerts</span>
-                                <i class="material-icons yellow">report_problem</i>
-                            </li>
-                        </ul>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-lg-6">
+                        <div class="card">
+                            <div class="card-main">
+                                <div class="cardtitle">
+                                    <span>A Reyemi Cargo Clearing &amp; Management Service</span>
+                                    @*DROPDOWN DOTS BUTTON*@
+                                    <ul id="ThreeDotsMenu" class="nav nav-list pull-right">
+                                        <li class="dropdown">
+                                            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="icon">more_vert</span></a>
+                                            <ul class="dropdown-menu" style="max-width: 576px;">
+                                                <li>
+                                                    <a href="javascript:void(0)"><span class="icon margin-right-half">loop</span>&nbsp;Lorem Ipsum</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)"><span class="icon margin-right-half">replay</span>&nbsp;Consectetur Adipiscing</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)"><span class="icon margin-right-half">shuffle</span>&nbsp;Sed Ornare</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-inner col-md-12">
+                                    <div class="col-md-6">
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">Voyage</label>
+                                                <div class="col-md-8">
+                                                    <span class="form-control no-border">3AS</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">Voyage</label>
+                                                <div class="col-md-8">
+                                                    <span class="form-control no-border">3AS</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">ETA/ATA</label>
+                                                <div class="col-md-8">
+                                                    <span class="form-control no-border">23/05/2015 00:00</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">ETD/ATD</label>
+                                                <div class="col-md-8">
+                                                    <span class="form-control no-border">23/05/2015 00:00</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="card-action col-md-12">
+                                    <ul>
+                                        <li class="card-icons">
+                                            <span>Call Request</span>
+                                            <i class="material-icons">archive</i>
+                                        </li>
+                                        <li class="card-icons">
+                                            <span>Loading List</span>
+                                            <i class="material-icons">border_color</i>
+                                        </li>
+                                        <li class="card-icons">
+                                            <span>Manifest</span>
+                                            <a id="addManifest" data-toggle="modal" onclick="openPopup()" href="#"><i class="material-icons blue">add_circle</i></a>
+                                        </li>
+                                        <li class="card-icons">
+                                            <span>Discharge List</span>
+                                            <i class="material-icons red">report_problem</i>
+                                        </li>
+                                        <li class="card-icons">
+                                            <span>Alerts</span>
+                                            <i class="material-icons yellow">report_problem</i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-6">
+                        <div class="card">
+                            <div class="card-main">
+                                <div class="cardtitle">
+                                    <span>A Reyemi Cargo Clearing &amp; Management Service</span>
+                                    @*DROPDOWN DOTS BUTTON*@
+                                    <ul id="ThreeDotsMenu" class="nav nav-list pull-right">
+                                        <li class="dropdown">
+                                            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="icon">more_vert</span></a>
+                                            <ul class="dropdown-menu" style="max-width: 576px;">
+                                                <li>
+                                                    <a href="javascript:void(0)"><span class="icon margin-right-half">loop</span>&nbsp;Lorem Ipsum</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)"><span class="icon margin-right-half">replay</span>&nbsp;Consectetur Adipiscing</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)"><span class="icon margin-right-half">shuffle</span>&nbsp;Sed Ornare</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-inner col-md-12">
+                                    <div class="col-md-6">
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">Voyage</label>
+                                                <div class="col-md-8">
+                                                    <span class="form-control no-border">3AS</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">Voyage</label>
+                                                <div class="col-md-8">
+                                                    <span class="form-control no-border">3AS</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">ETA/ATA</label>
+                                                <div class="col-md-8">
+                                                    <span class="form-control no-border">23/05/2015 00:00</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">ETD/ATD</label>
+                                                <div class="col-md-8">
+                                                    <span class="form-control no-border">23/05/2015 00:00</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="card-action col-md-12">
+                                    <ul>
+                                        <li class="card-icons">
+                                            <span>Call Request</span>
+                                            <i class="material-icons">archive</i>
+                                        </li>
+                                        <li class="card-icons">
+                                            <span>Loading List</span>
+                                            <i class="material-icons">border_color</i>
+                                        </li>
+                                        <li class="card-icons">
+                                            <span>Manifest</span>
+                                            <a id="addManifest" data-toggle="modal" onclick="openPopup()" href="#"><i class="material-icons blue">add_circle</i></a>
+                                        </li>
+                                        <li class="card-icons">
+                                            <span>Discharge List</span>
+                                            <i class="material-icons red">report_problem</i>
+                                        </li>
+                                        <li class="card-icons">
+                                            <span>Alerts</span>
+                                            <i class="material-icons yellow">report_problem</i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -267,7 +545,7 @@
     </section>
     <section>
         <div class="separator">
-            <h2>Calendar Date time picker</h2>
+            <h3>Calendar Date time picker</h3><br>
             <div class="input-group date form_datetime" data-date="2015-30-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
                 <input class="k-textbox" type="text" value="" readonly>
                 <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
@@ -276,17 +554,158 @@
             <input type="hidden" id="dtp_input1" value="" />
         </div>
     </section>
-
+    <!-- ADVANCED SEARCH FILTER -->
     <section>
         <div class="separator">
-            <h2>Pop Up</h2>
+            <h3>Advanced Search Filter</h3><br>
+            <div id="adv-search-filter">
+                <div class="row">
+                    <div class="col-md-12" id="filterbox">
+                        <div class="card">
+                            <div class="card-main">
+                                <form>
+                                    <div class="form-group">
+                                        <div class="col-md-1">
+                                            @(Html.Kendo().DropDownList()
+                                            .Name("Example1")
+                                            .DataTextField("ProductName")
+                                            .DataValueField("ProductID")
+                                            .HtmlAttributes(new { style = "width:100%" })
+                                            .Filter("contains")
+                                            .DataSource(source =>
+                                            {
+                                                source.Read(read =>
+                                                {
+                                                    read.Action("GetData", "Home");
+                                                })
+                                                .ServerFiltering(true);
+                                            })
+                                            )
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-1">
+                                            @Html.Kendo().TextBoxFor(m => m.ProductID).HtmlAttributes(new { style = "width:100%" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-1">
+                                            @(Html.Kendo().DropDownList()
+                                            .Name("Example2")
+                                            .DataTextField("ProductName")
+                                            .DataValueField("ProductID")
+                                            .HtmlAttributes(new { style = "width:100%" })
+                                            .Filter("contains")
+                                            .DataSource(source =>
+                                            {
+                                                source.Read(read =>
+                                                {
+                                                    read.Action("GetData", "Home");
+                                                })
+                                                .ServerFiltering(true);
+                                            })
+                                            )
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-1">
+                                            <input class="form-control" id="input-text" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-1">
+                                            <label>Document</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-1">
+                                            @(Html.Kendo().DropDownList()
+                                            .Name("Example3")
+                                            .DataTextField("ProductName")
+                                            .DataValueField("ProductID")
+                                            .HtmlAttributes(new { style = "width:100%" })
+                                            .Filter("contains")
+                                            .DataSource(source =>
+                                            {
+                                                source.Read(read =>
+                                                {
+                                                    read.Action("GetData", "Home");
+                                                })
+                                                .ServerFiltering(true);
+                                            })
+                                            )
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-1">
+                                            <label>Status</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-1">
+                                            @(Html.Kendo().DropDownList()
+                                            .Name("Example4")
+                                            .DataTextField("ProductName")
+                                            .DataValueField("ProductID")
+                                            .HtmlAttributes(new { style = "width:100%" })
+                                            .Filter("contains")
+                                            .DataSource(source =>
+                                            {
+                                                source.Read(read =>
+                                                {
+                                                    read.Action("GetData", "Home");
+                                                })
+                                                .ServerFiltering(true);
+                                            })
+                                            )
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-1">
+                                            <label>Updated:</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-2">
+                                            @(Html.Kendo().DropDownList()
+                                            .Name("Example5")
+                                            .DataTextField("ProductName")
+                                            .DataValueField("ProductID")
+                                            .HtmlAttributes(new { style = "width:100%" })
+                                            .Filter("contains")
+                                            .DataSource(source =>
+                                            {
+                                                source.Read(read =>
+                                                {
+                                                    read.Action("GetData", "Home");
+                                                })
+                                                .ServerFiltering(true);
+                                            })
+                                            )
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="col-md-1 resize">
+                                    <a href="#"><span><i class="material-icons pull-right">clear</i></span></a>
+                                    <a href="#"><span><i class="material-icons pull-left">search</i></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="separator">
+            <h3>Pop Up</h3><br>
             @(Html.Kendo().Window().Name("kwindow").Title("Pop Up Example").Content("Loading Content").Iframe(true).Draggable().Width(600).Height(300).Actions(action => action.Close()).Events(evt => evt.Close("onClose")).Visible(false).Modal(true).LoadContentFrom("Index", "Home"))
             <button type="button" class="k-button" id="btnWindow">Open Popup</button>
         </div>
     </section>
-    @*SAVE/SEND BUTTON*@
+    @*SEND/CANCEL BUTTON*@
     <div class="fbtn-container">
-        <div id="menu1" class="fbtn-inner">
+        <div id="btnPlus" class="fbtn-inner">
             <a class="fbtn fbtn-green fbtn-lg" data-toggle="dropdown" aria-expanded="false">
                 @*<span class="fbtn-text">Send</span>*@
                 <span class="fbtn-ori icon icon-open-in-new"><i class="material-icons">add</i></span>
@@ -297,6 +716,16 @@
                 <a class="fbtn fbtn-blue" href="#"><span class="fbtn-text">Send</span><i class="material-icons">send</i></a>
             </div>
         </div>
+    </div>
+</div>
+@*SAVE BUTTON*@
+<div class="fbtnsave">
+    <div id="btnSave" class="fbtn-inner">
+        <a class="fbtn fbtn-blue fbtn-lg" onclick="savechanges()" data-toggle="dropdown">
+        <span class="fbtn-text">Save</span>
+        <span class="fbtn-ori icon-open-in-new"><i class="material-icons">save</i></span>
+        <span class="fbtn-sub icon icon-close"><i class="material-icons">save</i></span>
+        </a>
     </div>
 </div>
 
@@ -329,8 +758,13 @@
 </script>
 <script>
     $(document).ready(function () { $("#btnWindow").bind("click", function () { var window = $("#kwindow").data("kendoWindow"); window.center().open(); }) });
+    $("#addManifest").bind("click", function () { var window = $("#kwindow").data("kendoWindow"); window.center().open(); });
     function onClose(e) {
         //alert("Closing");
+    }
+
+    function openPopup() {
+        var window = $("#kwindow").data("kendoWindow"); window.center().open();
     }
 </script>
 <script src="@Url.Content("~/Scripts/bootstrap-datetimepicker.min.js")"></script>

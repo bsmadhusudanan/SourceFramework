@@ -18,8 +18,65 @@
 }
 
 .container {
-    width: 1054px;
     margin: 0 auto;
+}
+/*SAVE BUTTON*/
+.fbtnsave {
+    backface-visibility: hidden;
+    position: fixed;
+    right: 16px;
+    top: 95px;
+    -webkit-transition: margin-bottom .3s cubic-bezier(.4, 0, .2, 1), right .3s cubic-bezier(.4, 0, .2, 1);
+    transition: margin-bottom .3s cubic-bezier(.4, 0, .2, 1), right .3s cubic-bezier(.4, 0, .2, 1);
+    z-index: 21;
+}
+
+#btnSave > a.fbtn-text:hover {
+    display: block;
+}
+
+
+/*GRID TABLES*/
+#GridTable .k-grid-header th.k-header > .k-link {
+    color: #000;
+    font-weight: bold;
+}
+
+#GridTable .k-grid-content tr td {
+    border-bottom: 1px solid #eee;
+}
+
+#GridTable .k-grid tr.k-state-selected {
+    background-color: #eee;
+    color: #000;
+}
+
+#GridTable .k-grid tr:hover,
+#GridTable .k-grid-content > table > tbody > tr:nth-of-type(odd) {
+    background-color: #F5F5F5;
+}
+
+
+/*COLOR CARD ICONS*/
+.material-icons.red {
+    color: #F00;
+}
+
+.material-icons.green {
+    color: #5ebf2a;
+}
+
+.material-icons.blue {
+    color: #20a5e8;
+}
+
+.material-icons.yellow {
+    color: #FF9100;
+}
+
+/*ADVANCED SEARCH FILTER*/
+#adv-search-filter {
+    margin-top: 20px;
 }
 
 /*GRID NAVIGATION MENU*/
@@ -122,18 +179,6 @@ section {
 }
 
 /*GRID CARDS*/
-/*.card {
-    position: relative;
-    display: inline-block;
-    vertical-align: top;
-    background-color: #fff;
-    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, .3);
-    box-shadow: 0 1px 6px rgba(0, 0, 0, .3);
-    -webkit-transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1);
-    transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1);
-    width: 100%;
-}*/
-
 .cardcontentmargin {
     margin: 0 33px;
 }
@@ -221,7 +266,7 @@ li.card-icons {
 .card-inner {
     position: relative;
     z-index: 1;
-    padding: 0 16px;
+    padding: 10px;
 }
 
 .card-action,
