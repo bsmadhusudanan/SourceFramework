@@ -2140,11 +2140,22 @@ html .km-pane-wrapper .km-widget,
     border-radius: 1px;
 }
 
+.k-radio-label {
+    line-height: 1.275em;
+}
+
+.k-radio:checked + .k-radio-label:after {
+    top: 4px;
+    left: 4px;
+}
+
 .k-radio-label:before {
     border-color: #7f7f7f;
     border-radius: 50%;
     background-color: #ffffff;
     border-width: 2px;
+    width: 18px;
+    height: 18px;
 }
 
 .k-radio-label:hover:before,
