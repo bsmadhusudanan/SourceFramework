@@ -79,6 +79,15 @@
     margin-top: 20px;
 }
 
+#filterbox {
+    line-height: 35px;
+}
+
+    #filterbox i.material-icons {
+        margin-top: 5px;
+    }
+
+
 /*GRID NAVIGATION MENU*/
 #GridNavBtn .k-button {
     text-transform: uppercase;
@@ -93,7 +102,7 @@
 }
 
 #GridNavBtn .search-icon {
-    top: 10px;
+    top: 14px;
     right: 65px;
     position: absolute;
 }
@@ -109,7 +118,8 @@
 #GridNavBtn ul > li > a.dropdown-toggle {
     line-height: 10px;
     font-size: 24px;
-    height: 49px;
+    height: 50px;
+    padding: 13px 15px;
 }
 
 
